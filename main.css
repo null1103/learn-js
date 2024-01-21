@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+/* VARIABLES */
+:root {
+  --ff-font-1: "Roboto", sans-serif;
+  --ff-font-2: "Open Sans", sans-serif;
+  --default-bg: #f1f5f8;
+  --clr-white: #fff;
+  --clr-black: #000;
+  --radius: 0.25rem;
+  --fixed-width: 800px;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-font-2);
+  background: var(--default-bg);
+}
+header {
+  min-height: 30vh;
+  background: var(--clr-black);
+  display: grid;
+  place-items: center;
+}
+h1 {
+  color: var(--clr-white);
+}
+a {
+  text-decoration: none;
+  color: var(--clr-black);
+}
+main {
+  padding: 50px 0;
+}
+.container {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.project {
+  border: 2px solid var(--clr-black);
+  width: 200px;
+  text-align: center;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;
+  margin: 0.75rem 1.25rem;
+}
+.project:hover {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+}
