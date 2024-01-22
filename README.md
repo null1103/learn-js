@@ -6,7 +6,7 @@ Javascript Projects [Course](https://www.youtube.com/watch?v=3PHXvlpOkf4&t=421s)
 
 - Default background is shown on page load and mode is simple
 - In simple mode, random background from the list is displayed when user clicks the button
-- In hex mode, random hex code is generate to use as the background when user clicks the button
+- In hex mode, random hex code is generated to use as the background when user clicks the button
 
 ## Counter
 
@@ -16,6 +16,10 @@ Javascript Projects [Course](https://www.youtube.com/watch?v=3PHXvlpOkf4&t=421s)
 
 ## Reviews
 
-- Shows first review on load
+- Shows first review on page load
 - User can use previous and next buttons to navigate through the reviews
 - Suprise me button shows a random review
+
+## Navbar
+
+Shows or hides the links when toggle button is clicked
