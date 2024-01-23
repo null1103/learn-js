@@ -23,3 +23,7 @@ Javascript Projects [Course](https://www.youtube.com/watch?v=3PHXvlpOkf4&t=421s)
 ## Navbar
 
 Shows or hides the links when toggle button is clicked
+
+## Modal
+
+Opens/Close a modal on click of a button
