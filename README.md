@@ -27,3 +27,7 @@ Shows or hides the links when toggle button is clicked
 ## Modal
 
 Opens/Close a modal on click of a button
+
+## Questions
+
+Shows/Hide answers to questions when user clicks the plus/minus icons
