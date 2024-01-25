@@ -73,23 +73,40 @@ const menu = [
   },
 ];
 
+const btnContainer = document.querySelector(".btn-container");
 const sectionCenter = document.querySelector(".section-center");
-const btns = document.querySelectorAll(".filter-btn");
 
 window.addEventListener("DOMContentLoaded", () => {
+  displayCategories();
   displayItems(menu);
-});
-
-btns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    let category = btn.dataset.id;
-    let categoryItems =
-      category === "all"
-        ? menu
-        : menu.filter((item) => item.category === category);
-    displayItems(categoryItems);
+  const btns = btnContainer.querySelectorAll(".filter-btn");
+  btns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btns.forEach((item) => {
+        if (item !== btn) {
+          item.classList.remove("selected");
+        }
+      });
+      btn.classList.toggle("selected");
+      let category = btn.dataset.id;
+      let categoryItems =
+        category === "all"
+          ? menu
+          : menu.filter((item) => item.category === category);
+      displayItems(categoryItems);
+    });
   });
 });
+
+function displayCategories() {
+  const categories = menu.map((item) => item.category);
+  const uniqueCategories = ["all", ...new Set(categories)];
+  let displayBtns = uniqueCategories.map((category) => {
+    return `<button type="button" class="filter-btn" data-id="${category}">${category}</button>`;
+  });
+  displayBtns = displayBtns.join("");
+  btnContainer.innerHTML = displayBtns;
+}
 
 function displayItems(items) {
   let displayMenu = items.map((item) => {
