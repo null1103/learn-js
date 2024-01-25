@@ -74,22 +74,38 @@ const menu = [
 ];
 
 const sectionCenter = document.querySelector(".section-center");
+const btns = document.querySelectorAll(".filter-btn");
 
 window.addEventListener("DOMContentLoaded", () => {
-  let displayMenu = menu.map((item) => {
+  displayItems(menu);
+});
+
+btns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    let category = btn.dataset.id;
+    let categoryItems =
+      category === "all"
+        ? menu
+        : menu.filter((item) => item.category === category);
+    displayItems(categoryItems);
+  });
+});
+
+function displayItems(items) {
+  let displayMenu = items.map((item) => {
     return `<article class="menu-item">
-    <img src="${item.img}" alt="menu item" class="photo" />
-    <div class="item-info">
-      <header>
-        <h4>${item.title}</h4>
-        <h4 class="price">${item.price}</h4>
-      </header>
-      <p class="item-text">
-        ${item.desc}
-      </p>
-    </div>
-  </article>`;
+      <img src="${item.img}" alt="menu item" class="photo" />
+      <div class="item-info">
+        <header>
+          <h4>${item.title}</h4>
+          <h4 class="price">${item.price}</h4>
+        </header>
+        <p class="item-text">
+          ${item.desc}
+        </p>
+      </div>
+    </article>`;
   });
   displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
-});
+}
