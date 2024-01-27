@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="knockout-app">
   <head>
     <title>Counter</title>
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
   </head>
   <body>
     <main>
       <div class="container">
         <h1>Counter</h1>
+        <p id="value" data-bind="text:counter"></p>
+        <button id="decrease" class="btn" data-bind="click:decrease">Decrease</button>
+        <button id="reset" class="btn" data-bind="click:reset">Reset</button>
+        <button id="increase" class="btn" data-bind="click:increase">
+          Increase
+        </button>
       </div>
     </main>
     <script src="app.js"></script>
